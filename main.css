@@ -1,24 +1,53 @@
 h1 {
     display: flex;
     justify-content: center;
+    background-color: rgb(54, 69, 79);
+    color: white;
+}
+
+#explain {
+    display: grid;
+    justify-content: center;
+    transform: translate(0px, 220px);
 }
 
 #button-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 250px;
 }
 
 button {
-    border: 1px solid black;
+    box-shadow: rgb(54, 69, 79) 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
 }
 
 button:hover{
-    background-color: blue;
+    background-color: lightblue;
 }
+
+button:focus {
+    background: blue;
+    outline: none;
+}
+
 
 #item-image {
     width: 200px;
     height: 200px;
-    justify-content: center;
-    margin: 10px;
+    margin: 2px;
+    border-radius: 20px;
+}
+
+footer {
+    display: flex;
+    background-color: rgb(54, 69, 79);
+    justify-content: space-evenly;
 }
