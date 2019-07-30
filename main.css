@@ -1,11 +1,15 @@
 h1 {
     display: flex;
     justify-content: center;
+    background-color: rgb(54, 69, 79);
+    color: white;
 }
 
 #button-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 250px;
 }
 
 button {
@@ -21,4 +25,10 @@ button:hover{
     height: 200px;
     justify-content: center;
     margin: 10px;
+}
+
+footer {
+    display: flex;
+    background-color: rgb(54, 69, 79);
+    justify-content: space-evenly;
 }
