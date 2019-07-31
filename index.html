@@ -11,12 +11,18 @@
     <h1>Bus Mall</h1>
 </header>
 <body>
+    <section id="product-section">
     <p id="explain">Choose an Item to help us figure out which products we will keep around!</p>
     <div id="button-container">
-        <button><img id="item-image" src="assets/bag.jpg" alt="product-choice"></button>
-        <button><img id="item-image" src="assets/banana.jpg" alt="product-choice"></button>
-        <button><img id="item-image" src="assets/bathroom.jpg" alt="product-choice"></button>
+        <button><img class="item-image" id="item-image" src="assets/bag.jpg" alt="product-choice"></button>
+        <button><img class="item-image" id="item-image" src="assets/banana.jpg" alt="product-choice"></button>
+        <button><img class="item-image" id="item-image" src="assets/bathroom.jpg" alt="product-choice"></button>
     </div>
+    <div id="next-container">
+        <button id="next-button" class="hidden">Next</button>
+    </div>
+</section>
+<script src="src/app.js" type="module"></script>
 </body>
 <footer><p>Bus Mall&copy;</p></footer>
 </html>

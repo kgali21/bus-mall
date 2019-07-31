@@ -1,4 +1,4 @@
-const productImages = [
+const productItems = [
     {
         id: 'usb-octopus',
         image: 'assets/usb.gif',
@@ -95,4 +95,4 @@ const productImages = [
         name: 'Wine Glass',
     },
 ];
-export default productImages;
+export default productItems;

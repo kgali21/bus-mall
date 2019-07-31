@@ -1,4 +1,4 @@
-import productsData from './products.js';
+import productItems from './products.js';
 
 const PRODUCT_KEY = 'PRODUCT';
 
@@ -16,10 +16,10 @@ const store = {
     getProducts() {
         let products = store.get(PRODUCT_KEY);
         if(!products) {
-            store.save(PRODUCT_KEY, productsData);
-            products = productsData; 
+            store.save(PRODUCT_KEY, products);
+            products = productItems; 
         }
-        return products;
+        return productItems;
     }
 };
 
