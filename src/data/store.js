@@ -19,7 +19,7 @@ const store = {
             store.save(PRODUCT_KEY, products);
             products = productItems; 
         }
-        return productItems;
+        return products;
     }
 };
 

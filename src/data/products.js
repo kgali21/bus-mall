@@ -15,6 +15,11 @@ const productItems = [
         name: 'Banana Slicer',
     },
     {
+        id: 'baby-sweep',
+        image: 'assets/baby-sweep.jpg',
+        name: 'Baby Sweep',
+    },
+    {
         id: 'bathroom-stand',
         image: 'assets/bathroom.jpg',
         name: 'Bathroom Stand',

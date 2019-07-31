@@ -7,61 +7,100 @@ const productDisplays = document.querySelectorAll('.item-image');
 const productName = document.getElementById('item-image');
 const choiceContainer = document.getElementById('button-container');
 const nextContainer = document.getElementById('next-container');
-const buttonClicked = document.querySelectorAll('click');
+const buttons = document.querySelectorAll('button');
+const button1 = document.getElementById('button1');
+const button2 = document.getElementById('button2');
+const button3 = document.getElementById('button3');
 
 let live = true;
 
 const products = store.getProducts();
 const masterProductSet = new ProductSet(products);
-let chosenProduct = null;
+let chosenProduct1 = null;
+let chosenProduct2 = null;
+let chosenProduct3 = null;
+let turns = 0;
+let userChoices = [];
 
 pickProduct();
 
 function pickProduct() {
     let productSet = masterProductSet;
 
-    if(chosenProduct && masterProductSet.list.length > 1) {
-        productSet = new ProductSet(masterProductSet.list);
-        productSet.removeById(chosenProduct.id);
-    }
+    
+    productSet = new ProductSet(masterProductSet.list);
+    // productSet.removeById(chosenProduct.id);
+    console.log(productSet);
 
-    chosenProduct = productSet.getRandomProduct();
+    chosenProduct1 = productSet.getRandomProduct();
     const otherProducts = new ProductSet(products);
-    otherProducts.removeById(chosenProduct.id);
+    otherProducts.removeById(chosenProduct1.id);
+    productSet.removeById(chosenProduct1.id);
+    console.log(otherProducts);
+    displayProducts(chosenProduct1, button1);
 
-    const unchosenProduct = otherProducts.getRandomProduct();
-    const productIndex = getRandomInt(3);
-    const chosenProductDisplay = productDisplays[productIndex];
-    const unchosenProductDisplay = productDisplays[2 - productIndex];
+    chosenProduct2 = productSet.getRandomProduct();
+    otherProducts.removeById(chosenProduct2.id);
+    productSet.removeById(chosenProduct2.id);
+    displayProducts(chosenProduct2, button2);
+    
+    chosenProduct3 = productSet.getRandomProduct();
+    otherProducts.removeById(chosenProduct3.id);
+    productSet.removeById(chosenProduct3.id);
+    displayProducts(chosenProduct3, button3);
 
-    productName.textContent = chosenProduct.name;
-    displayProducts(chosenProduct, chosenProductDisplay, true);
-    displayProducts(unchosenProduct, unchosenProductDisplay, false);
+    // const unchosenProduct = otherProducts.getRandomProduct();
+    // const productIndex = getRandomInt(2);
+    // const chosenProductDisplay = productDisplays[productIndex];
+    // const unchosenProductDisplay = productDisplays[1 - productIndex];
 
-    for(let i = 0; i < buttonClicked.length; i++){
-        const buttonClick = buttonClicked[i];
+    // productName.textContent = chosenProduct.name;
+    // displayProducts(chosenProduct, chosenProductDisplay, true);
+    // displayProducts(unchosenProduct, unchosenProductDisplay, false);
+    // let buttonClick;
+    for(let i = 0; i < buttons.length; i++){
+        const buttonClick = buttons[i];
         buttonClick.addEventListener('click', handleUserChoice);
+        console.log(userChoices);
     }
-
+    
     function handleUserChoice(event) {
-        if(!live) return;
+        // increment turns
+        turns++;
+        // store choice value
+        // userChoices.push(buttonClick.value);
+        // display 3 new images
 
-        const button = event.target;
 
-        choiceContainer.classList.add('reveal');
-        button.parentNode.classList.add('choice');
+        chosenProduct1 = productSet.getRandomProduct();
+        const otherProducts = new ProductSet(products);
+        otherProducts.removeById(chosenProduct1.id);
+        productSet.removeById(chosenProduct1.id);
+        console.log(otherProducts);
+        displayProducts(chosenProduct1, button1);
+    
+        chosenProduct2 = productSet.getRandomProduct();
+        otherProducts.removeById(chosenProduct2.id);
+        productSet.removeById(chosenProduct2.id);
+        displayProducts(chosenProduct2, button2);
+        
+        chosenProduct3 = productSet.getRandomProduct();
+        otherProducts.removeById(chosenProduct3.id);
+        productSet.removeById(chosenProduct3.id);
+        displayProducts(chosenProduct3, button3);
+        
+        console.log(event);
+        // const userChosen = chosenProduct.id === button.value;
 
-        const userChosen = chosenProduct.id === button.value;
-
-        if(userChosen) {
-            masterProductSet.removeById(chosenProduct.id);
-        }
-        else {
-            return;
-        }
-
-        nextContainer.classList.remove('hidden');
-        live = false;
+        // if(userChosen) {
+        //     masterProductSet.removeById(chosenProduct.id);
+        // }
+        // else {
+        //     return;
+        // }
+        //     console.log(masterProductSet);
+        // nextContainer.classList.remove('hidden');
+        // live = false;
     }
 
 }

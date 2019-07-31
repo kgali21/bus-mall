@@ -1,5 +1,5 @@
 import store from '../src/data/store.js';
-import productsData from '../src/data/products.js';
+import productItems from '../src/data/products.js';
 
 const test = QUnit.test;
 
@@ -26,6 +26,6 @@ test('get products uses bootstrapped products', (assert) => {
 
     const products = store.getProducts();
 
-    assert.deepEqual(products, productsData);
+    assert.deepEqual(products, productItems);
 
 });
