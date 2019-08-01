@@ -20,7 +20,7 @@ const store = {
             products = productItems; 
         }
         return products;
-    }
+    },
 };
 
 export default store;

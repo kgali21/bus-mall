@@ -16,7 +16,7 @@ const productItems = [
     },
     {
         id: 'baby-sweep',
-        image: 'assets/baby-sweep.jpg',
+        image: 'assets/sweep.png',
         name: 'Baby Sweep',
     },
     {

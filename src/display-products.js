@@ -5,7 +5,6 @@ function displayProducts(product, productDisplay) {
     img.alt = 'product-choice';
 
     productDisplay.value = product.name;
-    console.log(productDisplay.value);
 }
 
 export default displayProducts;
