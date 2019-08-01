@@ -1,12 +1,15 @@
 import store from './data/store.js';
 import ProductSet from './product-set.js';
 import displayProducts from './display-products.js';
+import renderChoices from './render-choices.js';
+import { findById } from './utility.js';
 
 const buttons = document.querySelectorAll('button');
 const button1 = document.getElementById('button1');
 const button2 = document.getElementById('button2');
 const button3 = document.getElementById('button3');
-
+const chosenList = document.getElementById('chosen-list');
+const turnCount = document.getElementById('turn-count');
 let live = true;
 
 const products = store.getProducts();
@@ -15,6 +18,7 @@ let chosenProduct1 = null;
 let chosenProduct2 = null;
 let chosenProduct3 = null;
 let turns = 0;
+let choiceItem = [];
 
 let oldChoices = [];
 let newChoices = [];
@@ -87,5 +91,10 @@ function handleUserChoice() {
         newChoices = oldChoices.splice(0, 3);
 
     }
-    
 }
+
+
+
+
+
+
