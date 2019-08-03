@@ -38,6 +38,14 @@ const store = {
         }
         return productsClicked;
     },
+    
+    getResults(){
+        let views = store.get('results');
+        if(!views){
+            views = [];
+        }
+        return views;
+    },
 
     productClick(id) {
         const productItems = store.getClickedItem();
@@ -54,7 +62,17 @@ const store = {
             productItems.push(lineItem);
         }
         store.save(PRODUCT_CLICKS, productItems);
-    }
+    },
+
+
+    // getClickResults(){
+    //     let display = store.get('final-results');
+    //     if(!display){
+    //         display = [];
+    //     }
+    //     return display;
+    // }
+    
 };
 
 
