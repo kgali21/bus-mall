@@ -46,12 +46,12 @@ button:focus {
     border-radius: 20px;
 }
 
+.hidden {
+    display: none;
+}
+
 footer {
     display: flex;
     background-color: rgb(54, 69, 79);
     justify-content: space-evenly;
-}
-
-.hidden {
-    display: none;
 }

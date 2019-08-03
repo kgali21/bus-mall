@@ -8,18 +8,8 @@ class ProductSet {
     getRandomProduct() {
         const index = getRandomInt(this.list.length);
         const product = this.list[index];
-        product.views = +1;
+        product.views += 1;
         return product;
-    }
-
-    incrementClicks(id) {
-
-        for(let i = 0; i < this.list.length; i++){
-            const item = item[i];
-            if(item.id === id){
-                item.clicks = +1;    
-            }
-        }
     }
 
     removeById(productId) {
@@ -37,5 +27,15 @@ class ProductSet {
         return this.list.length > 0;
     }
 }
+
+// export function incrementClicks(id) {
+
+//     for(let i = 0; i < this.list.length; i++){
+//         const item = item[i];
+//         if(item.id === id){
+//             item.clicks = +1;    
+//         }
+//     }
+// }
 
 export default ProductSet;

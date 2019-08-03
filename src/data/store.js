@@ -1,6 +1,8 @@
 import productItems from './products.js';
+import { findById } from '../utility.js';
 
 const PRODUCT_KEY = 'PRODUCT';
+const PRODUCT_CLICKS = 'CLICKS';
 
 const store = {
     storage: window.localStorage,
@@ -21,6 +23,40 @@ const store = {
         }
         return products;
     },
+
+    addProduct(productItems){
+        const products = store.getProducts();
+        products.push(productItems);
+        store.save(PRODUCT_KEY, products);
+    },
+
+    getClickedItem() {
+        let productsClicked = store.get(PRODUCT_CLICKS);
+
+        if(!productsClicked){
+            productsClicked = [];
+        }
+        return productsClicked;
+    },
+
+    productClick(id) {
+        const productItems = store.getClickedItem();
+
+        const lineItem = findById(productItems, id);
+
+        if(lineItem) {
+            lineItem.clicks++;
+        } else {
+            const lineItem = {
+                id: id,
+                clicks: 0
+            };
+            productItems.push(lineItem);
+        }
+        store.save(PRODUCT_CLICKS, productItems);
+    }
 };
+
+
 
 export default store;

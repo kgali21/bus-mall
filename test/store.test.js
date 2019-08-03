@@ -29,3 +29,23 @@ test('get products uses bootstrapped products', (assert) => {
     assert.deepEqual(products, productItems);
 
 });
+
+test('get product click data', (assert) =>{
+    const clickedItem = store.getClickedItem();
+
+    assert.deepEqual(clickedItem, []);
+});
+
+test('add to button click', (assert) => {
+    const id = 'usb-octopus';
+    const expected = [{
+        id: 'usb-octopus',
+        clicks: 0,
+    }];
+
+    store.productClick(id);
+    const productClick = store.getClickedItem();
+
+    assert.deepEqual(productClick, expected);
+
+});
