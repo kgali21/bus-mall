@@ -1,15 +1,17 @@
 
 import store from './data/store.js';
+import productItems from './data/products.js';
 
 const resultsCtx = document.getElementById('results').getContext('2d');
 
 const productName = [];
 const clicked = [];
-const finalResults = store.getClickedItem();
+const finalResults = store.getResults();
 
 for(let i = 0; i < finalResults.length; i++){
     const selected = finalResults[i];
     const views = selected.views;
+    productName.push(productItems.Name);
     clicked.push(views);
 }
 
