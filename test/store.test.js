@@ -36,16 +36,16 @@ test('get product click data', (assert) =>{
     assert.deepEqual(clickedItem, []);
 });
 
-test('add to button click', (assert) => {
-    const id = 'usb-octopus';
-    const expected = [{
-        id: 'usb-octopus',
-        clicks: 0,
-    }];
+// test('add to button click', (assert) => {
+//     const id = 'usb-octopus';
+//     const expected = [{
+//         id: 'usb-octopus',
+//         clicks: 0,
+//     }];
 
-    store.productClick(id);
-    const productClick = store.getClickedItem();
+//     store.productClick(id);
+//     const productClick = store.getClickedItem();
 
-    assert.deepEqual(productClick, expected);
+//     assert.deepEqual(productClick, expected);
 
-});
+// });
