@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bus Mall</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<header>
+    <h1>Bus Mall</h1>
+    <a href="chart.html">CHART</a>
+</header>
+
+<body>
+    <section id="product-section">
+        <p id="explain">Choose an Item to help us figure out which products we will keep around!</p>
+        <div id="button-container">
+            <button id="button1"><img class="item-image" src="" alt="product-choice"></button>
+            <button id="button2"><img class="item-image" src="" alt="product-choice"></button>
+            <button id="button3"><img class="item-image" src="" alt="product-choice"></button>
+        </div>
+    </section>
+    <p>
+        <span id="turn"></span>
+    </p>
+    <div class="results">
+        <p>Thanks for answering <span id="turn-count"></span> Questions</p>
+    </div>
+
+    <ul id="chosen-list">
+    </ul>
+    <script type=“text/javascript” src=“https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js“> </script>
+        
+    <script type="module" src="src/app.js"></script>
+
+</body>
+<footer>
+    <p>Bus Mall&copy;</p>
+</footer>
+
+</html>
