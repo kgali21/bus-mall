@@ -1,7 +1,6 @@
 import ProductSet from '../src/product-set.js';
 import productsData from '../src/data/products.js';
 
-
 const test = QUnit.test;
 
 QUnit.module('Product Set');

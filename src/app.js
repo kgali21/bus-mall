@@ -1,7 +1,6 @@
 import store from './data/store.js';
 import ProductSet from './product-set.js';
 import displayProducts from './display-products.js';
-import renderChoices from './render-choices.js';
 
 const buttons = document.querySelectorAll('button');
 const button1 = document.getElementById('button1');
@@ -59,10 +58,6 @@ function handleUserChoice(event) {
         button1.classList.add('hidden');
         button2.classList.add('hidden');
         button3.classList.add('hidden');
-        // button1.disable = true;
-        // button2.disable = true;
-        // button3.disable = true;
-        
     } else {
        
         masterProductSet.list = [...masterProductSet.list, ...newChoices];
@@ -85,7 +80,6 @@ function handleUserChoice(event) {
 
         store.productClick(event.currentTarget.value);
 
-        
         chosenProduct3 = productSet.getRandomProduct();
         otherProducts.removeById(chosenProduct3.id);
         productSet.removeById(chosenProduct3.id);

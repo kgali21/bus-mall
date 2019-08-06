@@ -16,13 +16,6 @@ for(let i = 0; i < finalResults.length; i++){
     productName.push(selected.Name);
 }
 
-// for(let i = 0; i < finalResults.length; i++){
-//     const selected = finalResults[i];
-//     const views = selected.views;
-//     clicked.push(views);
-// }
-
-
 // eslint-disable-next-line no-unused-vars
 const results = new Chart(resultsCtx, {
     type: 'bar',

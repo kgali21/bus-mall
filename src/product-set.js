@@ -28,14 +28,4 @@ class ProductSet {
     }
 }
 
-// export function incrementClicks(id) {
-
-//     for(let i = 0; i < this.list.length; i++){
-//         const item = item[i];
-//         if(item.id === id){
-//             item.clicks = +1;    
-//         }
-//     }
-// }
-
 export default ProductSet;
