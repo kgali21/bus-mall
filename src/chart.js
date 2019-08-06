@@ -1,5 +1,6 @@
 
 import store from './data/store.js';
+import { findById } from './utility.js';
 import productItems from './data/products.js';
 
 const resultsCtx = document.getElementById('results').getContext('2d');
@@ -10,9 +11,9 @@ const finalResults = store.getResults();
 
 for(let i = 0; i < finalResults.length; i++){
     const selected = finalResults[i];
-    const views = selected.views;
-    productName.push(productItems.Name);
+    const views = findById(productItems.id);
     clicked.push(views);
+    productName.push(selected.Name);
 }
 
 // for(let i = 0; i < finalResults.length; i++){
@@ -23,7 +24,7 @@ for(let i = 0; i < finalResults.length; i++){
 
 
 // eslint-disable-next-line no-unused-vars
-const newResults = new Chart(resultsCtx, {
+const results = new Chart(resultsCtx, {
     type: 'bar',
     data: {
         labels: productName,

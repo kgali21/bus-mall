@@ -61,7 +61,7 @@ const store = {
             };
             productItems.push(lineItem);
         }
-        store.save(PRODUCT_CLICKS, productItems);
+        store.save('PRODUCT_CLICKS', productItems);
     },
 
 
